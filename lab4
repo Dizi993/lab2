@@ -1,1 +1,61 @@
+#include <stdio.h>
+#include  <locale.h>
+void main()
+{
+	setlocale(LC_CTYPE, "RUS");
+	//ex 1
+	char c;
+	int i;
+	float f;
+	double d;
+	printf("Введите char-type значение:");
+	scanf_s("%c", &c);
+	printf("Введите int-type значение:");
+	scanf_s("%d", &i);
+	printf("Введите float-type значение:");
+	scanf_s("%f", &f);
+	printf("Введите double-type значение:");
+	scanf_s("%le", &d);
+	printf("\nchar-type:%c", c);
+	printf("\nint-type:%d", i);
+	printf("\nfloat-type:%f", f);
+	printf("\ndouble-type:%le", d);
+
+	//ex 1A
+	printf("\n\nЦелая часть числа float:%.0f", f);
+	printf("\nДробная часть числа float:%f", f - (int)f / 1);
+
+	//ex 1Б
+
+	printf("\n\n16-ричный код символа:%x", c);
+	printf("\n\n10-ричный код символа:%d", c);
+	
+	//ex 1B
+	printf("\n\n10-ное число:%f",1./i);
+
+	//ex 2
+	int a = 11;
+	int b = 3;
+	int x;
+	x = (double)a / b;
+	printf("%d,%f", x, x);
+	printf("\n\nx=%d,y=%f,z=%f", a / b, a / b, a / b);
+
+	//ex3
+
+	int N;
+	int last;
+	int first;
+	int summ;
+	int middle;
+	printf("\n\nВведите трёхзначное число:");
+	scanf_s("%d", &N);
+	first = N / 100;
+	last = N % 10;
+	middle = N / 10 % 10;
+	printf("\nПервая цифра:%d\nВторая цифра:%d\nТретья цифра:%d", first, middle, last);
+	printf("\nСумма цифр:%d", first + middle + last);
+
+	//ex 3*
+	printf("\nЧисло наоборот:%d%d%d", last, middle, first);
 

@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include  <locale.h>
 void main()
@@ -9,13 +10,13 @@ void main()
 	float f;
 	double d;
 	printf("Введите char-type значение:");
-	scanf_s("%c", &c);
+	scanf("%c", &c);
 	printf("Введите int-type значение:");
-	scanf_s("%d", &i);
+	scanf("%d", &i);
 	printf("Введите float-type значение:");
-	scanf_s("%f", &f);
+	scanf("%f", &f);
 	printf("Введите double-type значение:");
-	scanf_s("%le", &d);
+	scanf("%le", &d);
 	printf("\nchar-type:%c", c);
 	printf("\nint-type:%d", i);
 	printf("\nfloat-type:%f", f);
@@ -29,9 +30,9 @@ void main()
 
 	printf("\n\n16-ричный код символа:%x", c);
 	printf("\n\n10-ричный код символа:%d", c);
-	
+
 	//ex 1B
-	printf("\n\n10-ное число:%f",1./i);
+	printf("\n\n10-ное число:%f", 1. / i);
 
 	//ex 2
 	int a = 11;
@@ -49,7 +50,7 @@ void main()
 	int summ;
 	int middle;
 	printf("\n\nВведите трёхзначное число:");
-	scanf_s("%d", &N);
+	scanf("%d", &N);
 	first = N / 100;
 	last = N % 10;
 	middle = N / 10 % 10;
@@ -58,4 +59,16 @@ void main()
 
 	//ex 3*
 	printf("\nЧисло наоборот:%d%d%d", last, middle, first);
+
+	//homework
+	double v;
+	double x1;
+	printf("\nВведите стоимость 1 галлона: ");
+	scanf("%lf", &x1);
+	v = (390 / 15.) * x1;
+	printf("%lf", v);
+	printf("\n%lf", v - (390 / 36.)*x1);
+
+
+}
 

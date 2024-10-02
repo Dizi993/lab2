@@ -52,5 +52,10 @@ void main()
 		printf("\t| %4.2f   |%4.2f     |%4.2f     |", num3 * num4, num3 + num4, num3 - num4);
 		puts("\n\t--------------------------------");
 
-		//homework 
+		//homework
+int t;
+printf("Введите секунды: ");
+scanf("%d", &t);
+printf("%f", t / 60.);
+printf("\n%f", t / 3600.);
 }

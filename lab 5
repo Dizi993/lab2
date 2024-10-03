@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <locale.h>
+
+#include <math.h>
+#define M_PI 3.14159265358979323846
+void main()
+{
+	setlocale(LC_ALL, "RUS");
+	int gr;
+	puts("Введите градус: ");
+	scanf_s("%d", &gr);
+	double radian;
+	radian = gr * M_PI / 180;
+	printf("Ответ: %6f", sin(radian));
+
+	void task2();
+	setlocale(LC_ALL, "RUS");
+	double x,a,b,y;
+	puts("\nВведите значение x :");
+	scanf("%lf", &x);
+	double k;
+	k = 7;
+	a = pow((k + x), 3);
+	b = log10(fabs(k*x));
+	y = pow(b, 2) + sqrt(fabs(a));
+	printf("%.3f", y);
+
+	void task3();

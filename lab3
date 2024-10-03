@@ -1,21 +1,32 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <locale.h>
 #define D 2.54
 #define G 2.32
+float bad(int t)
+{
+	float rar = t / 3600;
+	return rar;
+}
+float izi(int t)
+{
+	float ror = t / 60.;
+	return ror;
+}
 void main()
 {
 	setlocale(LC_ALL, "RUS");
 	int num;
 	printf("введите  число:");
-	scanf_s("%d", &num);
-	printf("Введено число: %d",num);
+	scanf("%d", &num);
+	printf("Введено число: %d", num);
 
 	int num2;
 	printf("\nвведите второе число: ");
-	scanf_s("%d",&num2);
-	printf("Введено второе число: %d\n ",num2);
-	
-	printf("%d+%d=%d\n",num,num2,num2+num);
+	scanf("%d", &num2);
+	printf("Введено второе число: %d\n ", num2);
+
+	printf("%d+%d=%d\n", num, num2, num2 + num);
 	printf("%d-%d=%d\n", num, num2, num2 - num);
 	printf("%d*%d=%d\n", num, num2, num2 * num);
 	printf("%d/%d=%d\n", num, num2, num2 / num);
@@ -26,36 +37,36 @@ void main()
 
 	float result;
 	printf("Введите значение:");
-		scanf_s("%d", &dym);
-		result = D * dym;
-		printf(" % d английских дюймов – это % .2f см ", dym, result);
+	scanf("%d", &dym);
+	result = D * dym;
+	printf(" % d английских дюймов – это % .2f см ", dym, result);
 
-		int idym;
+	int idym;
 
-		float resultt;
-		printf("\nВведите значение:");
-		scanf_s("%d", &idym);
-		resultt = G * idym;
-		printf(" % d испанских дюймов – это % .2f см ", idym, resultt);
+	float resultt;
+	printf("\nВведите значение:");
+	scanf("%d", &idym);
+	resultt = G * idym;
+	printf(" % d испанских дюймов – это % .2f см ", idym, resultt);
 
-		float num3;
-		float num4;
-		printf("\n\nВведите num3:");
-		scanf_s("%f", &num3);
-		printf("Введите num4:");
-		scanf_s("%f", &num4);
-		puts("\n\n\t--------------------------------");
-		puts("\t|num3*num4|num3+num4 |num3-num4|");
-		puts("\t--------------------------------");
-		printf("\t|%4.2f*%.2f|%4.2f+%4.2f |%4.2f-%4.2f|", num3, num4, num3, num4, num3, num4);
-		puts("\n\t--------------------------------");
-		printf("\t| %4.2f   |%4.2f     |%4.2f     |", num3 * num4, num3 + num4, num3 - num4);
-		puts("\n\t--------------------------------");
+	float num3;
+	float num4;
+	printf("\n\nВведите num3:");
+	scanf("%f", &num3);
+	printf("Введите num4:");
+	scanf("%f", &num4);
+	puts("\n\n\t--------------------------------");
+	puts("\t|num3*num4|num3+num4 |num3-num4|");
+	puts("\t--------------------------------");
+	printf("\t|%4.2f*%.2f|%4.2f+%4.2f |%4.2f-%4.2f|", num3, num4, num3, num4, num3, num4);
+	puts("\n\t--------------------------------");
+	printf("\t| %4.2f   |%4.2f     |%4.2f     |", num3 * num4, num3 + num4, num3 - num4);
+	puts("\n\t--------------------------------");
 
-		//homework
-int t;
-printf("Введите секунды: ");
-scanf("%d", &t);
-printf("%f", t / 60.);
-printf("\n%f", t / 3600.);
+	//homework
+	int t;
+	printf("Введите секунды: ");
+	scanf("%d", &t);
+	printf("%f", izi(t));
+	printf("\n%f", bad(t));
 }

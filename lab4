@@ -1,74 +1,81 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include  <locale.h>
+double lol(int z)
+{
+    double rar = (390 / 15.);
+    return rar;
+}
+float lal(int x1)
+{
+    float ror = (390 / 36.);
+    return ror;
+}
 void main()
 {
-	setlocale(LC_CTYPE, "RUS");
-	//ex 1
-	char c;
-	int i;
-	float f;
-	double d;
-	printf("Введите char-type значение:");
-	scanf("%c", &c);
-	printf("Введите int-type значение:");
-	scanf("%d", &i);
-	printf("Введите float-type значение:");
-	scanf("%f", &f);
-	printf("Введите double-type значение:");
-	scanf("%le", &d);
-	printf("\nchar-type:%c", c);
-	printf("\nint-type:%d", i);
-	printf("\nfloat-type:%f", f);
-	printf("\ndouble-type:%le", d);
+    setlocale(LC_CTYPE, "RUS");
+    //ex 1
+    char c;
+    int i;
+    float f;
+    double d;
+    printf("Введите char-type значение:");
+    scanf("%c", &c);
+    printf("Введите int-type значение:");
+    scanf("%d", &i);
+    printf("Введите float-type значение:");
+    scanf("%f", &f);
+    printf("Введите double-type значение:");
+    scanf("%le", &d);
+    printf("\nchar-type:%c", c);
+    printf("\nint-type:%d", i);
+    printf("\nfloat-type:%f", f);
+    printf("\ndouble-type:%le", d);
 
-	//ex 1A
-	printf("\n\nЦелая часть числа float:%.0f", f);
-	printf("\nДробная часть числа float:%f", f - (int)f / 1);
+    //ex 1A
+    printf("\n\nЦелая часть числа float:%.0f", f);
+    printf("\nДробная часть числа float:%f", f - (int)f / 1);
 
-	//ex 1Б
+    //ex 1Б
 
-	printf("\n\n16-ричный код символа:%x", c);
-	printf("\n\n10-ричный код символа:%d", c);
+    printf("\n\n16-ричный код символа:%x", c);
+    printf("\n\n10-ричный код символа:%d", c);
 
-	//ex 1B
-	printf("\n\n10-ное число:%f", 1. / i);
+    //ex 1B
+    printf("\n\n10-ное число:%f", 1. / i);
 
-	//ex 2
-	int a = 11;
-	int b = 3;
-	int x;
-	x = (double)a / b;
-	printf("%d,%f", x, x);
-	printf("\n\nx=%d,y=%f,z=%f", a / b, a / b, a / b);
+    //ex 2
+    int a = 11;
+    int b = 3;
+    int x;
+    x = (double)a / b;
+    printf("%d,%f", x, x);
+    printf("\n\nx=%d,y=%f,z=%f", a / b, a / b, a / b);
 
-	//ex3
+    //ex3
 
-	int N;
-	int last;
-	int first;
-	int summ;
-	int middle;
-	printf("\n\nВведите трёхзначное число:");
-	scanf("%d", &N);
-	first = N / 100;
-	last = N % 10;
-	middle = N / 10 % 10;
-	printf("\nПервая цифра:%d\nВторая цифра:%d\nТретья цифра:%d", first, middle, last);
-	printf("\nСумма цифр:%d", first + middle + last);
+    int N;
+    int last;
+    int first;
+    int summ;
+    int middle;
+    printf("\n\nВведите трёхзначное число:");
+    scanf("%d", &N);
+    first = N / 100;
+    last = N % 10;
+    middle = N / 10 % 10;
+    printf("\nПервая цифра:%d\nВторая цифра:%d\nТретья цифра:%d", first, middle, last);
+    printf("\nСумма цифр:%d", first + middle + last);
 
-	//ex 3*
-	printf("\nЧисло наоборот:%d%d%d", last, middle, first);
+    //ex 3*
+    printf("\nЧисло наоборот:%d%d%d", last, middle, first);
 
-	//homework
-	double v;
-	double x1;
-	printf("\nВведите стоимость 1 галлона: ");
-	scanf("%lf", &x1);
-	v = (390 / 15.) * x1;
-	printf("%lf", v);
-	printf("\n%lf", v - (390 / 36.)*x1);
-
-
-}
+    //homework
+    double z;
+    double x1;
+    printf("\nВведите стоимость 1 галлона: ");
+    scanf("%lf", &x1);
+    z = lol(z) * x1;
+    printf("%lf", z);
+    printf("\n%lf", z - lal(x1) * x1);
 

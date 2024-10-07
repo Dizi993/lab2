@@ -1,14 +1,14 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include  <locale.h>
-double lol(int z)
+double lol()
 {
     double rar = (390 / 15.);
     return rar;
 }
-float lal(int x1)
+double lal()
 {
-    float ror = (390 / 36.);
+    double ror = (390 / 36.);
     return ror;
 }
 void main()
@@ -71,11 +71,12 @@ void main()
     printf("\nЧисло наоборот:%d%d%d", last, middle, first);
 
     //homework
+    float h;
     double z;
     double x1;
     printf("\nВведите стоимость 1 галлона: ");
     scanf("%lf", &x1);
-    z = lol(z) * x1;
+    z = lol() * x1;
     printf("%lf", z);
-    printf("\n%lf", z - lal(x1) * x1);
-
+    printf("\n%lf", z - lal() * x1);
+}

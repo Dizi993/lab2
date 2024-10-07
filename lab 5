@@ -26,4 +26,14 @@ void main()
 	y = pow(b, 2) + sqrt(fabs(a));
 	printf("%.3f", y);
 
-	void task3();
+	//homework
+double x;
+double y;
+double z;
+double h;
+double k;
+double b;
+x = 1,825 * pow(10,2);
+y = 18, 225;
+z = -3, 298 * pow(10,-2);
+h=fabs(pow(x,y/x)-)

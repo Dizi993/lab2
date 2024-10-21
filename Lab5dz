@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+
+double One(double x, double y)
+{
+  double a = pow(x, y / x);
+  double b = pow(y / x, 1 / 3.);
+  double sum = a - b;
+  return fabs(sum);
+}
+
+double Two(double x, double y, double z)
+{
+  double a = (y - x) * (cos(y) - z / (y - x));
+  double b = 1 + pow(y - x, 2);
+  return a / b;
+}
+
+int main()
+{
+  double x, y, z;
+
+  scanf("%lf", &x);
+  scanf("%lf", &y);
+  scanf("%lf", &z);
+
+  printf("%.5g", (One(x, y) + Two(x, y, z)));
+
+  return 0;
+}

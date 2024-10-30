@@ -3,6 +3,11 @@
 #include <locale.h>
 #include <math.h>
 #define PI 3.1415926535
+float rar(float x, float y)
+{
+	float ror = (pow(y, 2) + pow(x, 2));
+	return ror;
+}
 void main()
 {
 	//Задание 1
@@ -19,57 +24,49 @@ void main()
 		puts("Год не високосный");*/
 
 
-	// Задание 2
-		/*double x;
-		printf("Введите значение x: ");
-		scanf("%lf", &x);
-		if ((0 <= x) && (x <= 1))
-			printf("F(x)=%lf", pow(x, 2) - x);
-		else
-			printf("F(x)=%lf", pow(x, 2) - sin(PI * pow(x, 2)));*/
-	//Задание 3
-	//int x;
-	//int num1;
-	//int num2;
-	//int num3;
-	//int num4;
-	//printf("Введите четырёхзначное число: ");
-	//scanf("%d", &x);
-	//num1 = x % 10;
-	//num2 = x / 10 % 10;  // 1345
-	//num3 = x / 100 % 10;
-	//num4 = x / 1000 % 10;
-	//if ((num1 % 2 == 0) && (num2 % 2 == 0) && (num3 % 2 == 0) && (num4 % 2 == 0)) {
-	//	printf("число единиц/десятков/сотен/тысячных - четное");
-	//}
-	//else {
-	//	printf("число единиц/десятков/сотен/тысячных - не четное");
+		// Задание 2
+			/*double x;
+			printf("Введите значение x: ");
+			scanf("%lf", &x);
+			if ((0 <= x) && (x <= 1))
+				printf("F(x)=%lf", pow(x, 2) - x);
+			else
+				printf("F(x)=%lf", pow(x, 2) - sin(PI * pow(x, 2)));*/
+				//Задание 3
+				//int x;
+				//int num1;
+				//int num2;
+				//int num3;
+				//int num4;
+				//printf("Введите четырёхзначное число: ");
+				//scanf("%d", &x);
+				//num1 = x % 10;
+				//num2 = x / 10 % 10;  // 1345
+				//num3 = x / 100 % 10;
+				//num4 = x / 1000 % 10;
+				//if ((num1 % 2 == 0) && (num2 % 2 == 0) && (num3 % 2 == 0) && (num4 % 2 == 0)) {
+				//	printf("число единиц/десятков/сотен/тысячных - четное");
+				//}
+				//else {
+				//	printf("число единиц/десятков/сотен/тысячных - не четное");
+
+
 
 	// homework
-	// #define _CRT_SECURE_NO_WARNINGS
 
-/*#include <locale.h>
-#include <stdio.h>
-#include <math.h>
+	/*float x, y;
+	scanf("%f", &x);
+	scanf("%f", &y);
 
-	int main()
+	if (x >= 0 && 9 <= rar(x,y) && rar(x,y) <= 25)
 	{
-		setlocale(LC_CTYPE, "RUS");
-		float x, y;
-
-		scanf("%f", &x);
-		scanf("%f", &y);
-
-		if (x >= 0 && 9 <= (pow(y, 2) + pow(x, 2)) && (pow(y, 2) + pow(x, 2)) <= 25)
-		{
-			printf("Точка входит");
-		}
-		else
-		{
-			printf("Точка не входит");
-		}
-
-		return 0;
+		printf("Точка входит");
+	}
+	else
+	{
+		printf("Точка не входит");
 	}*/
+
+}
 
 		

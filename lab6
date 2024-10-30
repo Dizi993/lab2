@@ -54,11 +54,13 @@ void main()
 
 	// homework
 
-	/*float x, y;
+	/*float x, y, c;
 	scanf("%f", &x);
 	scanf("%f", &y);
 
-	if (x >= 0 && 9 <= rar(x,y) && rar(x,y) <= 25)
+	c=rar(x, y);
+
+	if (x >= 0 && 9 <= c && c <= 25)
 	{
 		printf("Точка входит");
 	}
@@ -68,5 +70,3 @@ void main()
 	}*/
 
 }
-
-		

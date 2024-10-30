@@ -44,3 +44,32 @@ void main()
 	//}
 	//else {
 	//	printf("число единиц/десятков/сотен/тысячных - не четное");
+
+	// homework
+	// #define _CRT_SECURE_NO_WARNINGS
+
+/*#include <locale.h>
+#include <stdio.h>
+#include <math.h>
+
+	int main()
+	{
+		setlocale(LC_CTYPE, "RUS");
+		float x, y;
+
+		scanf("%f", &x);
+		scanf("%f", &y);
+
+		if (x >= 0 && 9 <= (pow(y, 2) + pow(x, 2)) && (pow(y, 2) + pow(x, 2)) <= 25)
+		{
+			printf("Точка входит");
+		}
+		else
+		{
+			printf("Точка не входит");
+		}
+
+		return 0;
+	}*/
+
+		

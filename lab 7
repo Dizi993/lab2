@@ -1,1 +1,111 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+#define _USE_MATH_DEFINES
+int main()
+
+{
+    setlocale(LC_CTYPE, "RUS");
+    char c;
+    float x, y;
+    int day, month;
+    //task 1
+
+    printf("Введите символы '1' or 'a': ");
+    scanf("%c", &c);
+
+    switch (c)
+
+    {
+
+    case '1':
+
+        printf("Введено число.\n");
+
+        break;
+
+    case 'a':
+
+        printf("Введена буква.\n");
+
+        break;
+
+    default:
+
+       printf("Неизвестный символ\n");
+
+    }
+
+
+    //task 2
+
+    printf("Введите арифметичекое выражение:\n");
+    scanf(" %f %c %f", &x, &c, &y);
+    switch (c)
+    {
+    case '+':
+        printf("%g\n", x + y);
+        break;
+    case '/':
+        printf("%g\n", x / y);
+        break;
+    case '*':
+        printf("%g\n", x * y);
+        break;
+    case '-':
+        printf("%g\n", x - y);
+        break;
+    default:
+        printf("Неизвестный символ\n");
+    }
+    
+
+    //task 3
+
+    printf("Введите дату рождения в формате ddmm: ");
+    scanf("%2d%2d", &day, &month);
+
+    if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+        printf("Овен\n");
+    }
+    else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+        printf("Телец\n");
+    }
+    else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+        printf("Близнецы\n");
+    }
+    else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+        printf("Рак\n");
+    }
+    else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+        printf("Лев\n");
+    }
+    else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+        printf("Дева\n");
+    }
+    else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+        printf("Весы\n");
+    }
+    else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
+        printf("Скорпион\n");
+    }
+    else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
+        printf("Стрелец\n");
+    }
+    else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
+        printf("Козерог\n");
+    }
+    else if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+        printf("Водолей\n");
+    }
+    else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+        printf("Рыбы\n");
+    }
+    else {
+        printf("Неверная дата\n");
+    }
+
+    return 0;
+}
 

@@ -2,10 +2,20 @@
 #include <stdio.h>
 #include <locale.h>
 #include <math.h>
+double F1(double x, int n)
+{
+	double sumOne = x, sumTwo = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sumOne = sin(sumOne);
+		sumTwo += sumOne;
+	}
+	return sumTwo;
+}
 
 int main()
 {
-	int k1, n, m, m1,s=0,k=0;
+	int k1, n, m, m1, s = 0, k = 0;
 	char c1, c2;
 	double res, h, x, y, w;
 	setlocale(LC_ALL, "RUS");
@@ -30,7 +40,7 @@ int main()
 		putchar('!');
 	}
 
-	
+
 	printf("\nВведите первое значение: ");
 	scanf("%d", &n);
 	printf("Введите второе значение: ");
@@ -42,7 +52,7 @@ int main()
 	}
 	printf("\nРезультат %d\n", s);
 
-	
+
 	printf("Введите высшую степень: ");
 	scanf("%d", &m1);
 	for (int i1 = 1; i1 <= m1; i1++)
@@ -71,5 +81,19 @@ int main()
 		printf("| %3.1lf | %7.3lf |\n", x, y);
 	}
 	printf("-----------------\n");
+	//task 3
+
+	double x1;
+	int n1;
+
+	printf("Введите x: ");
+	scanf("%lf", &x1);
+
+	printf("Введите n: ");
+	scanf("%d", &n1);
+
+	printf("%lf", F1(2, 3));
+
 	return 0;
 }
+

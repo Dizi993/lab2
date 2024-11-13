@@ -1,0 +1,93 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+
+double F1(double x) {
+    if (x == 0) {
+        printf("Ошибка: деление на ноль для F1(x) при x = %lf\n", x);
+        return NAN;
+    }
+    return 1 / x;
+}
+
+double F2(double x) {
+    if (x < 0) {
+        printf("Ошибка: недопустимое значение для F2(x) при x = %lf\n", x);
+        return NAN;
+    }
+    return sqrt(x);
+}
+
+void printTable(double (*func)(double), double start, double end, double step) {
+    printf(" x       | F(x)\n");
+    printf("-------------------------\n");
+    for (double x = start; x <= end; x += step) {
+        double result = func(x);
+        if (!isnan(result)) {
+            printf("%8.2lf | %8.4lf\n", x, result);
+        }
+        else {
+            printf("%8.2lf |    NA\n", x);
+        }
+    }
+}
+
+int main()
+{
+    setlocale(LC_ALL, "RUS");
+
+    int choice;
+    double x, x1, x2, step;
+
+    while (1) {
+        printf("Выберите действие:\n");
+        printf("1. Вычислить F1(x)\n");
+        printf("2. Вычислить F2(x)\n");
+        printf("3. Построить таблицу F1(x) на интервале\n");
+        printf("4. Построить таблицу F2(x) на интервале\n");
+        printf("5. Выход\n");
+        printf("Ваш выбор: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+        case 1:
+            printf("Введите значение x для F1: ");
+            scanf("%lf", &x);
+            printf("F1(%lf) = %lf\n", x, F1(x));
+            break;
+
+        case 2:
+            printf("Введите значение x для F2: ");
+            scanf("%lf", &x);
+            printf("F2(%lf) = %lf\n", x, F2(x));
+            break;
+
+        case 3:
+            printf("Введите интервал x1 и x2 (x1 < x2): ");
+            scanf("%lf %lf", &x1, &x2);
+            printf("Введите шаг: ");
+            scanf("%lf", &step);
+            printTable(F1, x1, x2, step);
+            break;
+
+        case 4:
+            printf("Введите интервал x1 и x2 (x1 < x2): ");
+            scanf("%lf %lf", &x1, &x2);
+            printf("Введите шаг: ");
+            scanf("%lf", &step);
+            printTable(F2, x1, x2, step);
+            break;
+
+        case 5:
+            printf("Выход из программы.\n");
+            return 0;
+
+        default:
+            printf("Некорректный выбор. Попробуйте ещё раз.\n");
+            break;
+        }
+    }
+
+    return 0;
+}

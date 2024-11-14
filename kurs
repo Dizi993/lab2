@@ -2,92 +2,94 @@
 #include <stdio.h>
 #include <math.h>
 #include <locale.h>
+#define PI 3.14159265358979323846
 
 double F1(double x) {
     if (x == 0) {
-        printf("Ошибка: деление на ноль для F1(x) при x = %lf\n", x);
+        printf("Ошибка: деление на ноль в функции F1(x).\n");
         return NAN;
     }
-    return 1 / x;
+    return 2 * sin(PI * x) + sin(3 * PI * x) / (3 * x);
 }
 
 double F2(double x) {
-    if (x < 0) {
-        printf("Ошибка: недопустимое значение для F2(x) при x = %lf\n", x);
-        return NAN;
+    if (x <= 0) {
+        return (3 + x) / (1 + x * x);
     }
-    return sqrt(x);
+    else if (x < 1) {
+        return sqrt(1 + pow(1 - x, 2));
+    }
+    else {
+        return (1 + x) / (1 + cos(x) * cos(x));
+    }
 }
 
-void printTable(double (*func)(double), double start, double end, double step) {
-    printf(" x       | F(x)\n");
-    printf("-------------------------\n");
-    for (double x = start; x <= end; x += step) {
+void printTable(double (*func)(double), double x1, double x2, double step) {
+    printf("x\tF(x)\n");
+    for (double x = x1; x <= x2; x += step) {
         double result = func(x);
         if (!isnan(result)) {
-            printf("%8.2lf | %8.4lf\n", x, result);
-        }
-        else {
-            printf("%8.2lf |    NA\n", x);
+            printf("%lf\t%lf\n", x, result);
         }
     }
 }
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "RUS");
 
     int choice;
     double x, x1, x2, step;
 
     while (1) {
-        printf("Выберите действие:\n");
-        printf("1. Вычислить F1(x)\n");
-        printf("2. Вычислить F2(x)\n");
-        printf("3. Построить таблицу F1(x) на интервале\n");
-        printf("4. Построить таблицу F2(x) на интервале\n");
-        printf("5. Выход\n");
-        printf("Ваш выбор: ");
+        printf("\nВыберите действие:\n");
+        printf("1. Найти значение F1(x)\n");
+        printf("2. Найти значение F2(x)\n");
+        printf("3. Построить таблицу значений F1(x)\n");
+        printf("4. Построить таблицу значений F2(x)\n");
+        printf("5. Завершить работу\n");
+        printf("Введите ваш выбор: ");
         scanf("%d", &choice);
 
         switch (choice) {
         case 1:
-            printf("Введите значение x для F1: ");
+            printf("Введите значение x: ");
             scanf("%lf", &x);
             printf("F1(%lf) = %lf\n", x, F1(x));
             break;
-
         case 2:
-            printf("Введите значение x для F2: ");
+            printf("Введите значение x: ");
             scanf("%lf", &x);
             printf("F2(%lf) = %lf\n", x, F2(x));
             break;
-
         case 3:
-            printf("Введите интервал x1 и x2 (x1 < x2): ");
-            scanf("%lf %lf", &x1, &x2);
+            printf("Введите начальное значение x1: ");
+            scanf("%lf", &x1);
+            printf("Введите конечное значение x2: ");
+            scanf("%lf", &x2);
             printf("Введите шаг: ");
             scanf("%lf", &step);
             printTable(F1, x1, x2, step);
             break;
-
         case 4:
-            printf("Введите интервал x1 и x2 (x1 < x2): ");
-            scanf("%lf %lf", &x1, &x2);
+            printf("Введите начальное значение x1: ");
+            scanf("%lf", &x1);
+            printf("Введите конечное значение x2: ");
+            scanf("%lf", &x2);
             printf("Введите шаг: ");
             scanf("%lf", &step);
             printTable(F2, x1, x2, step);
             break;
-
         case 5:
-            printf("Выход из программы.\n");
+            printf("Завершение работы.\n");
             return 0;
-
         default:
-            printf("Некорректный выбор. Попробуйте ещё раз.\n");
+            printf("Неверный выбор. Попробуйте снова.\n");
             break;
         }
     }
+
+    return 0;
+}
 
     return 0;
 }

@@ -1,0 +1,71 @@
+include<stdio.h>
+#include<locale.h>
+#include<math.h>
+
+#define N 10 
+#define R 100
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    float A[N], temp, sum = 0.0;
+
+    for (int i = 0; i < N; i++) {
+        printf("A[%d] = ", i + 1);
+        scanf("%f", &temp);
+        A[i] = temp;
+    }
+
+    /*for (int i = 0; i < N; i++) {
+        A[i] *= 2;
+    }
+
+    printf("\n| индекс | исходное значение | новое значение |\n");
+    for (int i = 0; i < N; i++) {
+        printf("|   %d   |       %.2f      |      %.2f      |\n", i + 1, A[i] / 2, A[i]);
+    }
+
+    for (int i = 0; i < N; i++) {
+        sum += A[i];
+    }
+    float arifm = sum / N;
+
+    printf("\nСреднее арифметическое элементов массива: %.2f\n", arifm);
+    
+      
+    float A[R];
+    int count_plus = 0, count_min = 0;
+    float sum_plus = 0, sum_min = 0;
+
+    float step = (2.1 - 0.1) / (R - 1);
+    for (int i = 0; i < R; i++) {
+        float x = 0.1 + i * step;
+        A[i] = pow(x, 2) + sin(5 * x);
+    }
+
+    for (int i = 0; i < R; i++) {
+        if (A[i] > 0) {
+            sum_plus += A[i];
+            count_plus++;
+        }
+        else {
+            sum_min += A[i];
+            count_min++;    
+        }
+    }
+
+    float sred_plus = (count_plus > 0) ? (sum_plus / count_plus) : 0;
+
+    printf("Элементы массива:\n");
+    for (int i = 0; i < R; i++) {
+        printf("A[%d] = %.2f\n", i, A[i]);
+    }
+
+    printf("\nИмя массива: A\n");
+    printf("Накопленное значение положительных элементов: %.2f\n", sum_plus);
+    printf("Накопленное значение отрицательных элементов: %.2f\n", sum_min);
+    printf("Число положительных элементов: %d\n", count_plus);
+    printf("Число отрицательных элементов: %d\n", count_min);
+    printf("Среднее значение положительных элементов: %.2f\n", sred_plus);
+
+    return 0;*/
+}

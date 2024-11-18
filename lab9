@@ -1,58 +1,14 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <locale.h>
 #include <math.h>
-#define ROW 9
-#define COL 9
-#define STR 4
-#define POS 4
+#include <locale.h>
+//#include <stdio.h>
 
-int main() 
-{
-    setlocale(LC_ALL, "RUS");
-    int str, pos;
-    printf("\n");
+#include <stdio.h>
 
-    for (int i = 0; i <= STR; i++)
-    {
-        for (int j = 0; j <= POS - i; j++)
-
-            printf("%5d", (i + 1) * 5);
-        printf("\n");
-
-    }
-    system("pause");
-
-
-    int row, col;
-    printf("\n");
-
-    for (row = 1; row <= ROW; ++row)
-    {
-        for (col = 1; col <= row; col++)
-
-            printf("%5d", col * row);
-        printf("\n");
-
-    }
-    system("pause");
-    long long int number;
-    printf("Введите произвольное длинное число: ");
-    scanf("%lld", &number);
-    int prev_digit = -1;
-    for (; number > 0; number /= 10)
-    {
-        int digit = number % 10;
-        if (digit == prev_digit)
-        {
-            printf("Рядом стоящие одинаковые цифры: %d\n", digit);
-        }
-        prev_digit = digit;
-    }
-    system("pause");
-
-
+int main() {
     char symbol;
+    setlocale(LC_ALL, "RUS");
     printf("Введите символ для рисования: ");
     scanf("%c", &symbol);
     getchar();
@@ -82,3 +38,5 @@ int main()
 
     return 0;
 }
+
+

@@ -1,0 +1,106 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+#define N 10
+#define N1 100
+#define N2 10
+
+int Foo(int x)
+{
+    return pow(x, 3) + 3 * pow(x, 2) - 3;
+}
+
+int main()
+{
+    setlocale(LC_CTYPE, "RUS");
+
+    // задание 1:
+
+    float A[N];
+    float temp;
+    float sum = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        printf("a[%d] = ", i + 1);
+        scanf("%f", &temp);
+        A[i] = temp;
+    }
+
+    for (int i = 0; i < N; i++)
+    {
+        printf("| %15.3d | %15.3f ", i, A[i]);
+        sum += A[i];
+
+        if (i % 2 == 0)
+            printf("| %15.3f |\n", 1.);
+        else
+            printf("| %15.3f |\n", A[i]);
+    }
+
+    printf("\nСреднее значение: %f\n\n", sum / N);
+
+    // задание 2:
+
+    int F[N1];
+    int sum1 = 0;
+    int sum2 = 0;
+    int sum3 = 0;
+    int sum4 = 0;
+
+    for (int i = 0; i < N1; i++)
+        F[i] = Foo(i);
+
+    for (int i = 0; i < N1; i++)
+    {
+        if (F[i] >= 0)
+        {
+            sum1 += F[i];
+            sum2++;
+        }
+        else
+        {
+            sum3 += F[i];
+            sum4++;
+        }
+    }
+
+    sum1 /= sum2;
+
+    printf("Name array F\n");
+    printf("Отрицательные значения: %d\n", sum3);
+    printf("Положительные значение: %d\n", sum1);
+    printf("\n");
+    printf("Кол-во Отрицательных: %d\n", sum4);
+    printf("Кол-во Положительные: %d\n\n", sum2);
+
+    // задание дз
+
+    float A1[N];
+    float temp1;
+
+    for (int i = 0; i < N; i++)
+    {
+        printf("a[%d] = ", i + 1);
+        scanf("%f", &temp1);
+        A1[i] = temp1;
+    }
+
+    float sam = 0;
+    int len = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        if (A1[i] != 0)
+        {
+            sam += A1[i];
+            len++;
+        }
+    }
+
+    printf("Сред значение: %f\n", sam / len);
+
+    return 0;
+}
